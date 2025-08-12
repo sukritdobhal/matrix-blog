@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Blog - Enter the Digital Realm</title>
+    <meta name="description" content="A digital realm for sharing thoughts and knowledge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/matrix.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- Matrix Rain Background -->
+    <canvas id="matrix-canvas"></canvas>
+    
+    <!-- Main Navigation Sphere -->
+    <div class="sphere-container" id="sphereContainer">
+        <div class="sphere" id="mainSphere">
+            <div class="sphere-item" data-link="index.html">
+                <span class="link-text">HOME</span>
+            </div>
+            <div class="sphere-item" data-link="articles.html">
+                <span class="link-text">ARTICLES</span>
+            </div>
+            <div class="sphere-item" data-link="about.html">
+                <span class="link-text">ABOUT</span>
+            </div>
+            <div class="sphere-item" data-link="#contact">
+                <span class="link-text">CONTACT</span>
+            </div>
+            <div class="sphere-item" data-link="#archive">
+                <span class="link-text">ARCHIVE</span>
+            </div>
+            <div class="sphere-item" data-link="#projects">
+                <span class="link-text">PROJECTS</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header class="site-header">
+            <div class="header-content">
+                <h1 class="site-title">MATRIX BLOG</h1>
+                <p class="site-subtitle">:: WELCOME TO THE DIGITAL REALM ::</p>
+                <div class="terminal-cursor">_</div>
+            </div>
+        </header>
+
+        <main class="content-area">
+            <section class="hero-section">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <span class="terminal-button red"></span>
+                        <span class="terminal-button yellow"></span>
+                        <span class="terminal-button green"></span>
+                        <span class="terminal-title">root@matrix:~$</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p><span class="prompt">$</span> cat welcome.txt</p>
+                        <p class="typing-text">Initializing digital consciousness...</p>
+                        <p class="typing-text">Loading neural pathways...</p>
+                        <p class="typing-text">Welcome to the Matrix Blog</p>
+                        <p class="typing-text">A place where digital thoughts become reality</p>
+                        <p><span class="prompt">$</span> <span class="cursor-blink">_</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="articles-preview">
+                <h2 class="section-title">&gt; RECENT_TRANSMISSIONS</h2>
+                <div class="articles-grid" id="articlesGrid">
+                    <!-- Articles will be loaded dynamically -->
+                </div>
+            </section>
+
+            <section class="stats-section">
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <span class="stat-number" id="articleCount">00</span>
+                        <span class="stat-label">ARTICLES</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="viewCount">0000</span>
+                        <span class="stat-label">VIEWS</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="uptime">24/7</span>
+                        <span class="stat-label">UPTIME</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>&copy; 2024 Matrix Blog. All rights reserved.</p>
+                <p>Powered by digital consciousness</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/matrix-rain.js"></script>
+    <script src="js/sphere.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles - Matrix Blog</title>
+    <meta name="description" content="Explore all articles in the digital realm">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/matrix.css">
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+    
+    <div class="sphere-container" id="sphereContainer">
+        <div class="sphere" id="mainSphere">
+            <div class="sphere-item" data-link="index.html">
+                <span class="link-text">HOME</span>
+            </div>
+            <div class="sphere-item" data-link="articles.html">
+                <span class="link-text">ARTICLES</span>
+            </div>
+            <div class="sphere-item" data-link="about.html">
+                <span class="link-text">ABOUT</span>
+            </div>
+            <div class="sphere-item" data-link="#contact">
+                <span class="link-text">CONTACT</span>
+            </div>
+            <div class="sphere-item" data-link="#archive">
+                <span class="link-text">ARCHIVE</span>
+            </div>
+            <div class="sphere-item" data-link="#projects">
+                <span class="link-text">PROJECTS</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header class="site-header">
+            <h1 class="site-title">ARTICLES</h1>
+            <p class="site-subtitle">:: DIGITAL KNOWLEDGE BASE ::</p>
+        </header>
+
+        <main class="content-area">
+            <section class="articles-section">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <span class="terminal-button red"></span>
+                        <span class="terminal-button yellow"></span>
+                        <span class="terminal-button green"></span>
+                        <span class="terminal-title">root@matrix:~/articles$</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p><span class="prompt">$</span> ls -la articles/</p>
+                        <p>Loading digital manuscripts...</p>
+                    </div>
+                </div>
+                
+                <div class="articles-grid" id="allArticlesGrid">
+                    <!-- All articles will be loaded here -->
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>&copy; 2024 Matrix Blog. All rights reserved.</p>
+                <p><a href="index.html" style="color: #00ff00;">← Return to Main Terminal</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/matrix-rain.js"></script>
+    <script src="js/sphere.js"></script>
+    <script>
+        // Extended articles list for articles page
+        const allArticles = [
+            {
+                title: "Welcome to the Matrix",
+                excerpt: "Diving deep into the digital realm where reality meets code. Explore the fundamental concepts of web development and digital consciousness.",
+                date: "2024-01-15",
+                slug: "welcome-to-matrix",
+                readTime: "5 min read",
+                tags: ["welcome", "introduction", "matrix"]
+            },
+            {
+                title: "The Art of Digital Creation",
+                excerpt: "Understanding the balance between functionality and aesthetics in modern web design. Creating immersive experiences that captivate users.",
+                date: "2024-01-10",
+                slug: "digital-creation",
+                readTime: "8 min read",
+                tags: ["design", "development", "user-experience"]
+            },
+            {
+                title: "JavaScript in the Matrix",
+                excerpt: "Exploring advanced JavaScript concepts and techniques that power modern web applications. From closures to async programming.",
+                date: "2024-01-05",
+                slug: "javascript-matrix",
+                readTime: "12 min read",
+                tags: ["javascript", "programming", "web-development"]
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('allArticlesGrid');
+            
+            allArticles.forEach(article => {
+                const articleCard = document.createElement('div');
+                articleCard.className = 'article-card';
+                
+                articleCard.innerHTML = `
+                    <h3><a href="articles/${article.slug}.html" class="article-title">${article.title}</a></h3>
+                    <p class="article-excerpt">${article.excerpt}</p>
+                    <div class="article-tags" style="margin: 1rem 0;">
+                        ${article.tags.map(tag => `<span style="background: rgba(0,255,0,0.2); padding: 0.2rem 0.5rem; margin-right: 0.5rem; border-radius: 3px; font-size: 0.8rem;">${tag}</span>`).join('')}
+                    </div>
+                    <div class="article-meta">
+                        <span class="article-date">${new Date(article.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+                        <a href="articles/${article.slug}.html" class="read-more">${article.readTime} →</a>
+                    </div>
+                `;
+                
+                grid.appendChild(articleCard);
+            });
+        });
+    </script>
+</body>
+</html>
